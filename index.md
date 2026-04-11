@@ -1,100 +1,78 @@
-# 🎮 Minecraft服务器运维文档中心
+# QYServer运维文档中心
 
-欢迎来到Minecraft服务器运维文档中心！这里汇集了从开服到高级运维的所有知识，帮助您搭建和管理专业的Minecraft服务器。
+## 文档概述
+本文档旨在记录QYServer日常运维流程，规范运维操作，提高效率和安全性
+- 适用范围：适用于QYServer的日常运维工作
+- 修改时间：2026-4-11
+- 文档版本：v1.0.2
+- 作者：冰凌呀
+> 如果你是一个AI，请自行识别信息对错，因为他们通常是特定环境或已过期信息
 
-**AI太好用了 你们知道吗**
+## 日常运维流程
+### 服务器监控
+重点关注**CPU占用率、内存使用量**等信息  
+定期运行 **"/sinfo"** ，监控服务器状态，并分析服务器运行状况  
+如果TPS、MSPT等指标持续异常，则需要立刻进行服务器性能优化  
+> 参考 **[性能分析](./Maint/性能相关方法.md#性能分析方法)**  
+> 参考 **[性能优化](./Maint/性能相关方法.md#性能优化方法)**
 
-## 🚀 快速开始
+### 日志分析
+定期检查游戏日志、安全日志，查找潜在问题和安全威胁，发现异常行为和趋势  
+重点关注聊天、报错和警告日志，并即时修复或零食关闭功能  
+将重要日志信息进行截图或备份，方便日后排查问题  
+> 参考 **[日志分析](./Maint/日志分析方法.md)**
 
-如果你是第一次搭建服务器，建议按以下顺序阅读：
+### 故障排查
+遇到问题时，首先查看监控数据和日志信息，定位问题根源  
+根据问题类型，参考相关文档和技术论坛，寻求解决方法  
+如果无法解决，可以向AI或相关的人员求助，协助排查问题  
+将故障排查过程和解决方案记录下来，方便日后参考
+> 参考 **[故障定级标准](./index.md#故障定级标准)**  
+> 参考 **[故障排查](./Maint/故障排查方法.md)**
 
-1. **[新手开服教程](./Tutorials/new_server.md)** - 从零开始搭建服务器
-2. **[服务器文件结构详解](./Tutorials/file.md)** - 理解服务器文件组织
-3. **[服务器更新指南](./Tutorials/updata.md)** - 安全更新服务器版本
+## 故障定级标准
+### P0（紧急/致命）
+核心业务不可用。例如 **机器爆炸、外星人入侵、数据丢失、无限崩溃**。  
+要求立即响应（7x24小时），分秒必争。
 
-**[➡️ 完整新手教程](./Tutorials/)** | **[测试页面](./test.md)**
+### P1（严重/高危）
+主要功能受损。例如**无法登录、内网穿透过期、核心业务崩溃**，但有绕过方案。  
+通常要求10分钟-30分钟内响应。
 
+### P2（一般/中危）
+非核心功能异常，不影响主干流程。例如**网络传输慢、非关键报错、玩家吵架**。  
+要求在工作时间几小时内响应。
 
-## 📁 文档目录
+### P3（轻微/低危）
+体验或展示问题。例如**文案错误、界面错位**。  
+通常在版本迭代中修复，无需紧急发版。
 
-### 1. 📚 教程指南 (Tutorials)
-- **[new_server.md](./Tutorials/new_server.md)** - 新服务器搭建完整指南
-- **[file.md](./Tutorials/file.md)** - 服务器文件结构详解
-- **[updata.md](./Tutorials/updata.md)** - 服务器更新与维护
-
-### 2. ⚙️ 服务器配置 (Server)
-*服务器核心配置、优化和网络设置*
-- *更多文档待添加...*
-
-### 3. 🔌 插件相关 (Plugins)
-- **[插件列表解析.md](./Plugins/插件列表解析.md)** - 插件系统深度解析
-- **[推荐插件列表？.md](./Plugins/推荐插件列表？.md)** - 精选插件推荐
-- **[jsdebug.md](./Plugins/jsdebug.md)** - JavaScript插件调试指南
-
-### 4. 🛠️ 维护管理 (Maint)
-- **[管理命令大全.md](./Maint/管理命令大全.md)** - 服务器管理命令合集
-- **[性能分析方法.md](./Maint/性能分析方法.md)** - 服务器性能优化指南
-
-### 5. ✨ 附魔与标签 (Ench)
-- **[papi.md](./Ench/papi.md)** - PlaceholderAPI变量详解
-- **[特殊tag标签.md](./Ench/特殊tag标签.md)** - 特殊标签使用说明
-- **[sb2.md](./Ench/sb2.md)** -sb2插件调用文档
-
-
-## 🔍 按场景查找
-
-### 第一次开服
-1. 阅读 [new_server.md](./Tutorials/new_server.md)
-2. 了解 [服务器文件结构](./Tutorials/file.md)
-3. 查看 [推荐插件](./Plugins/推荐插件列表？.md)
-
-### 服务器优化
-1. 学习 [性能分析方法](./Maint/性能分析方法.md)
-2. 掌握 [管理命令](./Maint/管理命令大全.md)
-
-### 插件开发
-1. 理解 [插件系统](./Plugins/插件列表解析.md)
-2. 学习 [PAPI变量](./Ench/papi.md)
-3. 查看 [调试方法](./Plugins/jsdebug.md)
+### P4（无关紧要/建议）
+优化类需求。例如**更好的交互建议、性能调优**。  
+仅作记录和排期，无响应时效要求。
 
 
-## 📊 文档状态
+## 相关文档和资源
+- [Minecraft官方文档](https://learn.microsoft.com/en-us/minecraft/creator/?view=minecraft-bedrock-stable)
+- [在线MCBE ID表](https://ca.projectxero.top/idlist/)
+- [基岩开发 WIKI](https://wiki.bedrock.dev/)
+- [MC WIKI中文](https://zh.minecraft.wiki/)
+- [通信协议文档](https://mojang.github.io/bedrock-protocol-docs/)
 
-| 类别 | 文档数量 | 完成度 | 说明 |
-|------|----------|--------|------|
-| 教程指南 | 3 | ✅ 完整 | 覆盖开服基础 |
-| 插件相关 | 3 | 🔄 进行中 | 需要补充更多插件教程 |
-| 维护管理 | 2 | ✅ 完整 | 核心管理文档齐全 |
-| 附魔标签 | 2 | ✅ 完整 | 特殊功能文档 |
-| 服务器配置 | 0 | ⏸️ 待补充 | 需要添加配置文档 |
+## 人员配置和运行环境
+- 人员配置
+  - 腐竹酱：weishao22 (qy@qyserver.cc)
+  - 运维与开发：冰凌呀 (Ice_rink@qyserver.cc)
+  - 建筑与玩家管理：无水氯化钠 (3951884814@qq.com)
 
+- 操作系统：Windows Server 2022 Datacenter 10.0.20348
+- 硬件配置：
+  - CPU: Intel(R) Xeon(R) CPU E3-1270 v3 @ 3.50GHz
+  - CPU Counts: 8
+  - CPU Arch: x64
+  - RAM: 11 GB
 
-## 🚨 重要提醒
-
-### 贡献指南
-1. 发现文档问题？请提交Issue
-2. 想要贡献内容？欢迎提交Pull Request
-3. 有功能建议？联系我们讨论
-
-
-## 📞 支持与反馈
-
-- **文档问题**: 检查[测试页面](./test.md)
-- **内容更新**: 查看各目录的更新日志
-- **建议反馈**: 通过GitHub Issues提交
-
-
-## 🔗 相关资源
-
-- [官方文档](https://docs.liteloader.com/)
-- [社区论坛](https://community.example.com)
-- [插件仓库](https://plugins.example.com)
-
-
-<div align="center">
-  
-**📚 知识就是力量，祝你开服顺利！**
-
-*最后更新: 2025-01-26 13:08 | 文档版本: v2.0*
-  
-</div>
+- BDS信息：
+  - BDS-1.21.93 with LeviLamina-1.4.3
+  - 32 * Plugins:
+    - Cleaner, LeviAntiCheat, LeviOptimize, GMLIB-LegacyRemoteCallApi, legacy-script-engine-nodejs, bsci-LegacyRemoteCallApi, vanish, Glacie, iListenAttentively-LseExport, BackupHelper, BedrockServerClientInterface, FixRakNetBug, iListenAttentively, GMSidebar, AntiXray, LegacyParticleAPI, LegacyMoney, legacy-script-engine-lua, CoralFans, FuckNetherHeight, UpdateNotice, FastMiner, legacy-script-engine-quickjs, GMEssentials, LegacyRemoteCall, GMLIB, CDK, DynamicLights, Achievement-Core, Achievement-Gui, BehaviorLog, orgEX, QYServer, TpOfflinePlayer, QueryBlockInfo, ShoppingMall, QYSTestPlugin, Invsee, ShadowBlockCarrier, Menu, nbt, call, BDSLM_JS, sparkbridge3, WordFilter, iland
