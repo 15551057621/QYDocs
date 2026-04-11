@@ -103,4 +103,12 @@
 | `removeEscapeCode` | 移除转义代码 | 移除字符串中的颜色代码等转义序列   |
 
 ## 表情符号（Emoji）  
-emoji_... （各类表情符号） 这些变量返回代表游戏内各种按钮、物品、动作的 Unicode 表情符号。名称基本描述了它们代表的内容，例如： emoji_ps_cross -> PlayStation 的 X 按钮 emoji_xbox_a -> Xbox 的 A 按钮 emoji_wooden_sword -> 木剑 emoji_attack_touch -> 触摸屏的攻击按钮 emoji_heart -> 心形 emoji_solid_star -> 实心星星
+emoji_... （各类表情符号）   
+这些变量返回代表游戏内各种按钮、物品、动作的 Unicode 表情符号。  
+名称基本描述了它们代表的内容，例如：   
+- emoji_ps_cross -> PlayStation 的 X 按钮 
+- emoji_xbox_a -> Xbox 的 A 按钮 
+- emoji_wooden_sword -> 木剑 
+- emoji_attack_touch -> 触摸屏的攻击按钮 
+- emoji_heart -> 心形 
+- emoji_solid_star -> 实心星星
